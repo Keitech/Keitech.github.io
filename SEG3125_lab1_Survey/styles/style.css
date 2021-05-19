@@ -7,3 +7,10 @@ body {
 h2 {
     color: blue;
 }
+
+.userInfo {
+    background-color: lightblue;
+    padding: 10px;
+    color: white;
+
+};
