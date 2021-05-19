@@ -5,16 +5,31 @@
         <title >Lab 1 Survey</title>
     </head>
 <body>
+    <h1 >SEG3125-Lab1 Survey!</h1>
     <br/>
     <h2 >How is the UI of <a href="http://walmart.ca">Walmart</a></h2>
     <br/>
-    <img position="center" width="756" height="400" src="images/walmart.png" alt="http://Walmart.ca">
+    <a href="http://Walmart.ca">
+        <img displa="center" width="756" height="400" src="images/walmart.png" alt="http://Walmart.ca">
+    </a>
     <br/>
     <br/>
     <form>
         <div class="userInfo">
         <h3>Personal Info</h3>
-        <p>Name: <input type="text" name="name"></p>
+        <p>Name: <input type="text" name="name" placeholder="First Name Last Name"></p>
+        <p>School: <input type="text" name="school" placeholder="University of .."></p>
+        </div>
+
+        <div class="radioQuestion">
+        <h4>What would you buy at Walmart?</h4>
+        <input type="radio" id="cat food" name="cat" value="cat food">
+        <label for="cat food">Cat Food</label><br/>
+        <input type="radio" id="dog food" name="dog" value="dog food">
+        <label for="cat food">Dog Food</label><br/>
+        <input type="radio" id="other" name="other" value="other">
+        <label for="other">Other</label><br/>
+
         </div>
 
     </form>

@@ -6,13 +6,31 @@ body {
     padding: 10px;
 }
 
+img {
+    display:"center";
+    width:"756";
+    height:"400";
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
 h2 {
-    color: blue;
+    text-align: center;
 }
 
 .userInfo {
-    background-color: lightblue;
+    background-color: lightskyblue;
     padding: 10px;
     color: white;
 
+};
+
+.radioQuestion {
+    background-color: white;
+    padding: 10px;
+    color: lightskyblue;
 };
