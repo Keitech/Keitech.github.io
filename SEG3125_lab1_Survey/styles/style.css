@@ -1,9 +1,9 @@
-.center {
-    margin: auto;
-    width: 50%;
+body {
+    margin:0 auto;
+    width: 1000px;
     padding: 10px;
 }
 
-header1 {
+h2 {
     color: blue;
 }
