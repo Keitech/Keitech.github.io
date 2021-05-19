@@ -15,13 +15,13 @@
     <br/>
     <br/>
     <form>
-        <div class="userInfo">
+        <div class="layer1">
         <h3>Personal Info</h3>
         <p>Name: <input type="text" name="name" placeholder="First Name Last Name"></p>
         <p>School: <input type="text" name="school" placeholder="University of .."></p>
         </div>
 
-        <div class="radioQuestion">
+        <div class="layer2">
         <h3>What would you buy at Walmart?</h3>
         <input type="radio" id="cat food" name="ques" value="cat food">
         <label for="cat food">Cat Food</label><br/>
@@ -31,7 +31,7 @@
         <label for="other">Other</label><br/>
         </div>
 
-        <div class="singleSelection">
+        <div class="layer1">
         <h3>Do you Like to go to Walmart?</h3>
         <select name="rating" id="rating">
             <option value="Yes">Yes</option>
@@ -40,6 +40,16 @@
             <option value="Not Really">Not Really</option>
             <option value="No">No</option>
         </select>
+        </div>
+
+        <div class="layer2">
+        <h3>What have you bought from Walmart?</h3><br/>
+        <input type="checkbox" name="shop" value="Groceries">
+        <label for="Groceries">Groceries</label><br/>
+        <input type="checkbox" name="shop" value="Miscellaneous">
+        <label for="Miscellaneous">Miscellaneous</label><br/>
+        <input type="checkbox" name="shop" value="McDonalds">
+        <label for="McDonalds">McDonalds</label><br/>
         </div>
 
     </form>
