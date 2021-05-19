@@ -24,13 +24,16 @@ h2 {
 
 .userInfo {
     background-color: lightskyblue;
-    padding: 10px;
     color: white;
 
 };
 
 .radioQuestion {
     background-color: white;
-    padding: 10px;
     color: lightskyblue;
 };
+
+.singleSelection {
+    background-color: lightskyblue;
+    color:white
+}
