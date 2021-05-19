@@ -22,10 +22,15 @@ h2 {
     text-align: center;
 }
 
+hr {
+    border: 5px solid lightblue;
+    border-radius: 25px;
+}
+
 .layer1 {
-    background-color: lightskyblue;
+    background-color: white;
     padding: 10px;
-    color: white;
+    color: lightskyblue;
 
 };
 
