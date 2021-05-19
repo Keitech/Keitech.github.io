@@ -37,6 +37,7 @@ hr {
     display: block;
     width: 100%;
     border:none;
+    padding: 12px 24px;
     background-color: dodgerblue;
     text-align: center;
     font-size: 15px;
