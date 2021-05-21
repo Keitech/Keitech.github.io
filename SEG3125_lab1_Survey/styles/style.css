@@ -6,14 +6,6 @@ body {
     padding: 5px
 }
 
-img {
-    display:"center";
-    width:"756";
-    height:"400";
-    margin-left: auto;
-    margin-right: auto;
-}
-
 h1 {
     text-align: center;
 }
@@ -26,6 +18,15 @@ hr {
     border: 5px solid lightblue;
     border-radius: 25px;
 }
+
+.centerImg {
+    display:"block";
+    width:"756";
+    height:"400";
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .layer1 {
     background-color: white;
