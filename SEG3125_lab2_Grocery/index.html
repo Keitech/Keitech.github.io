@@ -28,11 +28,9 @@
     </select>
 
     <p>Would you prefer organic products?:</p>
-    <select id="organic" name="organic" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
-    <option value=""></option>
-    <option value="Yes">Yes</option>
-    <option value="No">No</option>
-    </select>
+    <input type="checkbox" id="organic" name="organic" value="checkbox" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
+    <label for="organic">Organic</label>
+    
 </div>
 
 <div id="Products" class="tabcontent">
@@ -52,6 +50,8 @@
   <p>Here is your cart.</p>
   <div id="displayCart"></div>
 </div>
+
+<p>Website designed by Keith Tang 300014176</p>
 
 <script src="scripts/groceries.js"></script>
 <script src="scripts/main.js"></script>

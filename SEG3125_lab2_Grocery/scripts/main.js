@@ -22,7 +22,9 @@ function openInfo(evt, tabName) {
 
 }
 
-
+function sortPrice(a, b) {
+    return a.price > b.price ? true : false
+}
 	
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
@@ -36,18 +38,17 @@ function populateListProductChoices(slct1, slct2) {
 		
 	// obtain a reduced list of products based on restrictions
     var optionArray = restrictListProducts(products, s1.value);
-    // optionArray.sort(function(a, b) {
-    //     return a.price - b.price;
-    // });
-    console.log(optionArray)
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
-	// <label for="Bread">Bread/label><br>
+    // <label for="Bread">Bread/label><br>
+    
+    const sortOptionArray = optionArray.sort(sortPrice)
 		
 	for (i = 0; i < optionArray.length; i++) {
 			
-		var productName = optionArray[i];
+        var productName = sortOptionArray[i];
+        var productPrice = sortOptionArray[i];
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
@@ -58,7 +59,7 @@ function populateListProductChoices(slct1, slct2) {
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName));
+		label.appendChild(document.createTextNode(productName + productPrice));
 		s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
