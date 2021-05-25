@@ -4,38 +4,78 @@
 
 var products = [
 	{
-		name: "butter",
+        name: "butter",
+        organic: false,
 		lactose: true,
-		nuts: true,
-		price: 1.99
+		nuts: false,
+		price: 4.99
 	},
 	{
         name: "cheese",
+        organic: true,
 		lactose: true,
-		nuts: true,
-		price: 1.99
+		nuts: false,
+		price: 2.99
 	},
 	{
         name: "milk",
+        organic: true,
 		lactose: true,
-		nuts: true,
-		price: 1.99
+		nuts: false,
+		price: 7.99
     },
     {
         name: "yogurt",
+        organic: false,
+		lactose: true,
+		nuts: false,
+		price: 1.69
+    },
+    {
+        name: "IceCream",
+        organic: true,
 		lactose: true,
 		nuts: true,
 		price: 1.99
     },
     {
-        name: "iceCream",
+        name: "Peanuts",
+        organic: true,
 		lactose: true,
 		nuts: true,
-		price: 1.99
-    }
+		price: 0.99
+    },
+    {
+        name: "IceCream with nuts",
+        organic: true,
+		lactose: true,
+		nuts: true,
+		price: 5.99
+    },
+    {
+        name: "almondBar",
+        organic: false,
+		lactose: false,
+		nuts: true,
+		price: 3.99
+    },
+    {
+        name: "cookies",
+        organic: false,
+		lactose: true,
+		nuts: true,
+		price: 5.99
+    },
+    {
+        name: "Bread",
+        organic: true,
+		lactose: false,
+		nuts: false,
+		price: 2.59
+    },
+    
 ];
 	
-
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
@@ -43,10 +83,10 @@ var products = [
 function restrictListProducts(prods, restriction) {
 	let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
+		if ((restriction == "Lactose") && (prods[i].lactose == true)){
 			product_names.push(prods[i].name);
 		}
-		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
+		else if ((restriction == "Nut Allergy") && (prods[i].nuts == true)){
 			product_names.push(prods[i].name);
 		}
 		else if (restriction == "None"){

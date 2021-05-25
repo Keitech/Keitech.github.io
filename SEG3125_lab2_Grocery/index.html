@@ -17,15 +17,22 @@
 
 <!-- Tab content -->
 <div id="Personal Data" class="tabcontent">
-  <h3>Client Information</h3>
-  <p>Tell us a bit about you.</p>
-	Choose a Category:
+  <h3>Personal Data</h3>
+  <p>Tell us a bit about you. So the options can be just right!</p>
+	Choose a Category: (Are you Lactose-intolerant or have any nut allergies?)
 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 	<option value=""></option>
-	<option value="Vegetarian">Vegetarian</option>
-    <option value="GlutenFree">GlutenFree</option>
+	<option value="Lactose">Lactose</option>
+    <option value="Nut Allergy">Nut Allergy</option>
     <option value="None">None</option>
-	</select>
+    </select>
+
+    <p>Would you prefer organic products?:</p>
+    <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
+    <option value=""></option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+    </select>
 </div>
 
 <div id="Products" class="tabcontent">
