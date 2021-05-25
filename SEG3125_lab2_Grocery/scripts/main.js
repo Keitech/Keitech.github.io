@@ -23,7 +23,7 @@ function openInfo(evt, tabName) {
 }
 
 function sortPrice(a, b) {
-    return a.price > b.price ? true : false
+    return a.price > b.price ? 1 : -1
 }
 	
 // generate a checkbox list from a list of products
@@ -47,8 +47,8 @@ function populateListProductChoices(slct1, slct2) {
 		
 	for (i = 0; i < optionArray.length; i++) {
 			
-        var productName = sortOptionArray[i];
-        var productPrice = sortOptionArray[i];
+        var productName = sortOptionArray[i].name;
+        var productPrice = sortOptionArray[i].price;
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";

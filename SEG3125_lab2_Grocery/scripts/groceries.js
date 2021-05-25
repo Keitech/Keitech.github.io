@@ -4,35 +4,35 @@
 
 var products = [
 	{
-        name: "butter",
+        name: "Butter",
         organic: false,
 		lactose: true,
 		nuts: false,
 		price: 4.99
 	},
 	{
-        name: "cheese",
+        name: "Cheese",
         organic: true,
 		lactose: true,
 		nuts: false,
 		price: 2.99
 	},
 	{
-        name: "milk",
+        name: "Milk",
         organic: true,
 		lactose: true,
 		nuts: false,
 		price: 7.99
     },
     {
-        name: "yogurt",
+        name: "Yogurt",
         organic: false,
 		lactose: true,
 		nuts: false,
 		price: 1.69
     },
     {
-        name: "IceCream",
+        name: "Ice Cream",
         organic: true,
 		lactose: true,
 		nuts: true,
@@ -46,21 +46,21 @@ var products = [
 		price: 0.99
     },
     {
-        name: "IceCream with nuts",
+        name: "Ice Cream with nuts",
         organic: true,
 		lactose: true,
 		nuts: true,
 		price: 5.99
     },
     {
-        name: "almondBar",
+        name: "Energy Bar",
         organic: false,
 		lactose: false,
 		nuts: true,
 		price: 3.99
     },
     {
-        name: "cookies",
+        name: "Cookies",
         organic: false,
 		lactose: true,
 		nuts: true,

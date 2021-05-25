@@ -20,12 +20,18 @@
   <h3>Personal Data</h3>
   <p>Tell us a bit about you. So the options can be just right!</p>
 	Choose a Category: (Are you Lactose-intolerant or have any nut allergies?)
-	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<!-- <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 	<option value=""></option>
 	<option value="Lactose">Lactose</option>
     <option value="Nut Allergy">Nut Allergy</option>
     <option value="None">None</option>
-    </select>
+    </select> -->
+    <input type="checkbox" id="Lactose" name="Lactose" value="checkbox" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
+    <label for="organic">Lactose Intolerant</label>
+    <input type="checkbox" id="Nut Allergy" name="Nut Allergy" value="checkbox" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
+    <label for="organic">Nut Allergy</label>
+    <input type="checkbox" id="None" name="None" value="checkbox" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
+    <label for="organic">None</label>
 
     <p>Would you prefer organic products?:</p>
     <input type="checkbox" id="organic" name="organic" value="checkbox" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
