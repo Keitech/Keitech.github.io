@@ -81,16 +81,20 @@ var products = [
 // prices should be included in this list, as well as a sort based on price
 
 function restrictListProducts(prods, restriction) {
-	let product_names = [];
+    let product_names = [];
+    let product_obj = {}
 	for (let i=0; i<prods.length; i+=1) {
 		if ((restriction == "Lactose") && (prods[i].lactose == true)){
-			product_names.push(prods[i].name, prods[i].price);
+            product_obj.push(prods[i].name, prods[i].price);
+			product_names.push(product_obj);
 		}
 		else if ((restriction == "Nut Allergy") && (prods[i].nuts == true)){
-			product_names.push(prods[i].name, prods[i].price);
+			product_obj.push(prods[i].name, prods[i].price);
+			product_names.push(product_obj);
 		}
 		else if (restriction == "None"){
-			product_names.push(prods[i].name, prods[i].price);
+			product_obj.push(prods[i].name, prods[i].price)
+			product_names.push(product_obj);
 		}
 	}
 	return product_names;
