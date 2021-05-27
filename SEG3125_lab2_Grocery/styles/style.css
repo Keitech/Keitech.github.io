@@ -1,4 +1,16 @@
 /* Style the tab */
+
+body {
+  width: 500px;
+  padding: 0 10px;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+ul {
+  list-style-type: circle;
+}
+
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;

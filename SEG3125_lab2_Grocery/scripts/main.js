@@ -2,6 +2,8 @@
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
+displayAllProducts(restrictListProducts(products))
+
 function openInfo(evt, tabName) {
 
 	// Get all elements with class="tabcontent" and hide them
@@ -29,12 +31,18 @@ function sortPrice(a, b) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
+function populateListProductChoices(slct1) {
     var s1 = document.getElementById(slct1);
-    var s2 = document.getElementById(slct2);
+    var s2 = document.getElementById('displayProduct');
 	
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
-    s2.innerHTML = "";
+	s2.innerHTML = "";
+	
+	if (restrictionSet.has(s1.value)) {
+		restrictionSet.delete(s1.value)
+	} else {
+		restrictionSet.add(s1.value)
+	}
 		
 	// obtain a reduced list of products based on restrictions
     var optionArray = restrictListProducts(products, s1.value);
@@ -42,8 +50,13 @@ function populateListProductChoices(slct1, slct2) {
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
     // <label for="Bread">Bread/label><br>
-    
-    const sortOptionArray = optionArray.sort(sortPrice)
+	
+	displayAllProducts(optionArray)
+}
+
+function displayAllProducts(optionArray) {
+	var s2 = document.getElementById('displayProduct');
+	const sortOptionArray = optionArray.sort(sortPrice)
 		
 	for (i = 0; i < optionArray.length; i++) {
 			
@@ -59,7 +72,7 @@ function populateListProductChoices(slct1, slct2) {
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName + productPrice));
+		label.appendChild(document.createTextNode(productName + " - $" + productPrice));
 		s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
@@ -93,6 +106,6 @@ function selectedItems(){
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+	c.appendChild(document.createTextNode("Total Price is $" + (getTotalPrice(chosenProducts)).toFixed(2)));
 		
 }

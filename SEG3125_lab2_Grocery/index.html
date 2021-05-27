@@ -6,7 +6,7 @@
 
 <body>
 
-<h2>Welcome to QuicknEasy Groceries!</h2>
+<h1>Welcome to YesFrills Groceries!</h1>
 
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
@@ -18,34 +18,37 @@
 <!-- Tab content -->
 <div id="Personal Data" class="tabcontent">
   <h3>Personal Data</h3>
-  <p>Tell us a bit about you. So the options can be just right!</p>
-	Choose a Category: (Are you Lactose-intolerant or have any nut allergies?)
-	<!-- <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-	<option value=""></option>
-	<option value="Lactose">Lactose</option>
-    <option value="Nut Allergy">Nut Allergy</option>
-    <option value="None">None</option>
-    </select> -->
-    <input type="checkbox" id="Lactose" name="Lactose" value="Lactose" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
-    <label for="Lactose">Lactose Intolerant</label>
-    <input type="checkbox" id="Nut Allergy" name="Nut Allergy" value="Nut Allergy" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
-    <label for="Nut Allergy">Nut Allergy</label>
-    <input type="checkbox" id="None" name="None" value="None" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
-    <label for="None">None</label>
+  <p>Tell us a bit about you.</p>
+    Have a Dietary Restriction?:
+    <br/>
+    <br/>
 
-    <p>Would you prefer organic products?:</p>
-    <input type="checkbox" id="organic" name="organic" value="Organic" onchange="populateListProductChoices(this.id, 'displayProduct')"> 
-    <label for="organic">Organic</label>
+    <input type="checkbox" id="Lactose" name="Lactose" value="Lactose" onchange="populateListProductChoices(this.id)"> 
+    <label for="Lactose">Lactose Intolerant</label>
+    <input type="checkbox" id="Nut Allergy" name="Nut Allergy" value="Nut Allergy" onchange="populateListProductChoices(this.id)"> 
+    <label for="Nut Allergy">Nut Allergy</label>
+
+    <br/>
+
+    <p>Would you prefer Non-Organic products?:</p>
+    <input type="checkbox" id="Organic" name="Organic" value="Organic" onchange="populateListProductChoices(this.id)"> 
+    <label for="Organic">Non-Organic</label>
+    <br/>
     
 </div>
 
 <div id="Products" class="tabcontent">
   <h3>Your targeted products</h3>
   <p>We preselected products based on your restrictions.</p>
+  <ul >
+    <li>L = Contains Lactose</li>
+    <li>N = Contains Nuts</li>
+    <li>O = Organic</li>
+  </ul>
+  
 	 Choose items to buy:
-	 <div id="displayProduct">
-         <p></p>
-     </div>
+   <div id="displayProduct"></div>
+   <br/>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
 		Add selected items to cart.
 	</button>
@@ -57,7 +60,7 @@
   <div id="displayCart"></div>
 </div>
 
-<p>Website designed by Keith Tang 300014176</p>
+<p>Website created by Keith Tang 300014176</p>
 
 <script src="scripts/groceries.js"></script>
 <script src="scripts/main.js"></script>

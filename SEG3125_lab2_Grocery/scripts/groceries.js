@@ -4,97 +4,105 @@
 
 var products = [
 	{
-        name: "Butter",
+        name: "Butter [L]",
         organic: false,
-		lactose: true,
-		nuts: false,
-		price: 4.99
-	},
-	{
-        name: "Cheese",
-        organic: true,
 		lactose: true,
 		nuts: false,
 		price: 2.99
 	},
 	{
-        name: "Milk",
+        name: "Cheese [L, O]",
+        organic: true,
+		lactose: true,
+		nuts: false,
+		price: 11.99
+	},
+	{
+        name: "Milk [L, O]",
         organic: true,
 		lactose: true,
 		nuts: false,
 		price: 7.99
     },
     {
-        name: "Yogurt",
+        name: "Greek Yogurt [L]",
         organic: false,
 		lactose: true,
 		nuts: false,
-		price: 1.69
+		price: 4.99
     },
     {
-        name: "Ice Cream",
+        name: "Ice Cream [L, O]",
         organic: true,
 		lactose: true,
-		nuts: true,
-		price: 1.99
+		nuts: false,
+		price: 2.79
     },
     {
-        name: "Peanuts",
+        name: "Peanuts [N, O]",
         organic: true,
+		lactose: false,
+		nuts: true,
+		price: 1.59
+    },
+    {
+        name: "Ice Cream with Nuts [L, N]",
+        organic: false,
 		lactose: true,
 		nuts: true,
-		price: 0.99
+		price: 3.29
     },
     {
-        name: "Ice Cream with nuts",
-        organic: true,
-		lactose: true,
-		nuts: true,
-		price: 5.99
-    },
-    {
-        name: "Energy Bar",
+        name: "Energy Bar [N]",
         organic: false,
 		lactose: false,
 		nuts: true,
-		price: 3.99
+		price: 6.49
     },
     {
-        name: "Cookies",
-        organic: false,
+        name: "Cookies [L, N, O]",
+        organic: true,
 		lactose: true,
 		nuts: true,
-		price: 5.99
+		price: 1.25
     },
     {
-        name: "Bread",
-        organic: true,
+        name: "Bread []",
+        organic: false,
 		lactose: false,
 		nuts: false,
 		price: 2.59
     },
     
-];
-	
+];	
+
+const restrictionSet = new Set()
+function getSelectedCheckboxValues() {
+    const checkboxes = document.querySelectorAll(`input[name="diet"]:checked`);
+    let values = [];
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox);
+    });
+    console.log(values)
+    return values;
+}
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction) {
+function restrictListProducts(prods) {
     let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Lactose") && (prods[i].lactose == true)){
-			product_names.push(prods[i]);
+		if ((restrictionSet.has("Lactose")) && (prods[i].lactose)){
+            continue;
 		}
-		else if ((restriction == "Nut Allergy") && (prods[i].nuts == true)){
-            product_names.push(prods[i]);
+		else if ((restrictionSet.has("Nut Allergy")) && (prods[i].nuts)){
+            continue;
         }
-        else if ((restriction == "Organic") && (prods[i].organic == true)){
-            product_names.push(prods[i]);
+        else if ((restrictionSet.has("Organic")) && (prods[i].organic)){
+            continue;
         }
-		else if (restriction == "None"){
-            product_names.push(prods[i]);
-		}
+        product_names.push(prods[i]);
 	}
 	return product_names;
 }
