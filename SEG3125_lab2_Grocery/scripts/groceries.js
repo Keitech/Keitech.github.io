@@ -11,9 +11,9 @@ var products = [
 		price: 2.99
 	},
 	{
-        name: "Cheese [L, O]",
+        name: "Cheese [O]",
         organic: true,
-		lactose: true,
+		lactose: false,
 		nuts: false,
 		price: 11.99
 	},
