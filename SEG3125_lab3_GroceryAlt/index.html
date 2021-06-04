@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <h1 class="title">Welcome to YESFRILLS Groceries!</h1>
+  <h3 class="subtitle">How can you live without groceries!</h3>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Personal Data')" id="defaultOpen">Personal Data</button>
+  <button class="tablinks" onclick="openCity(event, 'Products')">Products</button>
+  <!-- <button class="tablinks" onclick="openCity(event, 'Cart')">Cart</button> -->
+</div>
+
+<!-- Tab content -->
+<!-- checkbox design from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox -->
+<div id="Personal Data" class="tabcontent">
+  <h3>Personal Data</h3>
+  <p>Tell us a bit about you.</p>
+  <p>Have a Dietary Restriction?:</p>
+    <label class="dietList" for="Lactose">Lactose Intolerant
+    <input type="checkbox" id="Lactose" name="Lactose" value="Lactose" onchange="populateListProductChoices(this.id)"> 
+    <span class="checkmark"></span>
+    </label>
+    <label class="dietList" for="Nut Allergy">Nut Allergy
+    <input type="checkbox" id="Nut Allergy" name="Nut Allergy" value="Nut Allergy" onchange="populateListProductChoices(this.id)"> 
+    <span class="checkmark"></span>
+    </label>  
+
+    <p>Would you prefer Organic products?:</p>
+    <label class="dietList" for="Organic">Organic
+    <input type="checkbox" id="Organic" name="Organic" value="Organic" onchange="populateListProductChoices(this.id)"> 
+    <span class="checkmark"></span>
+    </label>
+    <br/>
+    
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Pick your Products</h3>
+  <p>We preselected products based on your restrictions.</p>
+  
+	 <p>Select a Category to browse products!</p>
+   <div class="productTab" id=productTab>
+    <button class="tablink" id="food" onclick="displayCategory(event, 'Fruit')">Fruit</button>
+    <button class="tablink" id="food" onclick="displayCategory(event, 'Cold')">Cold Foods</button>
+    <button class="tablink" id="food" onclick="displayCategory(event, 'Snacks')">Snacks</button>
+  </div>
+  <div class="productStyle" id="displayProduct"></div>
+   <br/>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart
+	</button>
+</div>
+
+<!-- <div id="Cart" class="tabcontent"> -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Cart</h3>
+    <p>Here is your cart.</p>
+    <div id="displayCart"></div>
+  </div>
+</div>
+<!-- </div> -->
+
+<div class="cartTab" id="prod">
+  <button id="myBtn" class="tablinks" onclick="openCity(event, 'Cart')"> <img src="assets/cart.png" alt="cart"> Cart</button>
+  
+</div>
+
+<p id="bottom">Website created by Keith Tang </p>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
