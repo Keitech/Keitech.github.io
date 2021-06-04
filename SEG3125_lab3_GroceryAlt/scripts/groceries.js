@@ -4,7 +4,7 @@
 
 var products = [
 	{
-        name: "Potato Chips",
+        name: "Potato Chips ",
         category: 'Snacks',
         organic: false,
 		lactose: false,
@@ -12,7 +12,7 @@ var products = [
         price: 2.99
 	},
 	{
-        name: "Organic Cheese",
+        name: "Organic Cheese ",
         category: 'Cold',
         organic: true,
 		lactose: false,
@@ -20,12 +20,20 @@ var products = [
 		price: 11.99
 	},
 	{
-        name: "Candy ",
+        name: "Organic Biscuit ",
         category: 'Snacks',
-        organic: false,
+        organic: true,
+		lactose: false,
+		nuts: true,
+		price: 7.99
+    },
+    {
+        name: "Organic Popcorn",
+        category: 'Snacks',
+        organic: true,
 		lactose: false,
 		nuts: false,
-		price: 7.99
+        price: 9.99
     },
     {
         name: "Greek Yogurt ",
@@ -46,7 +54,7 @@ var products = [
     {
         name: "Peanuts ",
         category: 'Snacks',
-        organic: true,
+        organic: false,
 		lactose: false,
 		nuts: true,
 		price: 1.59
@@ -84,7 +92,7 @@ var products = [
 		price: 3.25
     },
     {
-        name: "Apple",
+        name: "Apple ",
         category: 'Fruit',
         organic: false,
 		lactose: false,
@@ -92,7 +100,7 @@ var products = [
 		price: 1.23
     },
     {
-        name: "Organic Pear",
+        name: "Organic Pear ",
         category: 'Fruit',
         organic: true,
 		lactose: false,
@@ -112,15 +120,15 @@ var products = [
 ];	
 
 const restrictionSet = new Set()
-function getSelectedCheckboxValues() {
-    const checkboxes = document.querySelectorAll(`input[name="diet"]:checked`);
-    let values = [];
-    checkboxes.forEach((checkbox) => {
-        values.push(checkbox);
-    });
-    console.log(values)
-    return values;
-}
+// function getSelectedCheckboxValues() {
+//     const checkboxes = document.querySelectorAll(`input[name="diet"]:checked`);
+//     let values = [];
+//     checkboxes.forEach((checkbox) => {
+//         values.push(checkbox);
+//     });
+//     console.log(values)
+//     return values;
+// }
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price

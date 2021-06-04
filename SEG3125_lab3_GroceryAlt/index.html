@@ -10,11 +10,10 @@
   <h3 class="subtitle">How can you live without groceries!</h3>
 
 <!-- Tab links, each one with an onclick event associated with it -->
-
+<!-- Tab design from https://www.w3schools.com/howto/howto_js_vertical_tabs.asp -->
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Personal Data')" id="defaultOpen">Personal Data</button>
-  <button class="tablinks" onclick="openCity(event, 'Products')">Products</button>
-  <!-- <button class="tablinks" onclick="openCity(event, 'Cart')">Cart</button> -->
+  <button class="tablinks" onclick="openCity(event, 'Products')">Available Products</button>
 </div>
 
 <!-- Tab content -->
@@ -22,7 +21,7 @@
 <div id="Personal Data" class="tabcontent">
   <h3>Personal Data</h3>
   <p>Tell us a bit about you.</p>
-  <p>Have a Dietary Restriction?:</p>
+  <p>Have a Dietary Restriction? Check the box that corresponds to you.</p>
     <label class="dietList" for="Lactose">Lactose Intolerant
     <input type="checkbox" id="Lactose" name="Lactose" value="Lactose" onchange="populateListProductChoices(this.id)"> 
     <span class="checkmark"></span>
@@ -32,7 +31,7 @@
     <span class="checkmark"></span>
     </label>  
 
-    <p>Would you prefer Organic products?:</p>
+    <p>Would you prefer to only see Organic products?:</p>
     <label class="dietList" for="Organic">Organic
     <input type="checkbox" id="Organic" name="Organic" value="Organic" onchange="populateListProductChoices(this.id)"> 
     <span class="checkmark"></span>
@@ -47,9 +46,9 @@
   
 	 <p>Select a Category to browse products!</p>
    <div class="productTab" id=productTab>
-    <button class="tablink" id="food" onclick="displayCategory(event, 'Fruit')">Fruit</button>
-    <button class="tablink" id="food" onclick="displayCategory(event, 'Cold')">Cold Foods</button>
-    <button class="tablink" id="food" onclick="displayCategory(event, 'Snacks')">Snacks</button>
+    <button class="tablink" id="fruit" onclick="displayCategory(event, 'Fruit')">Fruit</button>
+    <button class="tablink" id="cold" onclick="displayCategory(event, 'Cold')">Cold Foods</button>
+    <button class="tablink" id="snacks" onclick="displayCategory(event, 'Snacks')">Snacks</button>
   </div>
   <div class="productStyle" id="displayProduct"></div>
    <br/>

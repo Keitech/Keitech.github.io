@@ -47,10 +47,30 @@ function populateListProductChoices(slct1) {
 	// obtain a reduced list of products based on restrictions
 	var optionArray = restrictListProducts(products, s1.value);
 	restrictedItems = optionArray
+	if (activeCategory.has('Fruit') && activeCategory.has('Cold') && activeCategory.has('Snacks')) {
+		document.getElementById("fruit").click();
+		document.getElementById("cold").click();
+		document.getElementById("snacks").click();
+	} else if (activeCategory.has('Fruit') && activeCategory.has('Cold')) {
+		document.getElementById("fruit").click();
+		document.getElementById("cold").click();
+	} else if (activeCategory.has('Fruit') && activeCategory.has('Snacks')) {
+		document.getElementById("fruit").click();
+		document.getElementById("snacks").click();
+	} else if (activeCategory.has('Cold') && activeCategory.has('Snacks')) {
+		document.getElementById("cold").click();
+		document.getElementById("snacks").click();
+	} else if (activeCategory.has('Fruit')) {
+		document.getElementById("fruit").click();
+	}else if (activeCategory.has('Cold')) {
+		document.getElementById("cold").click();
+	}else if (activeCategory.has('Snacks')) {
+		document.getElementById("snacks").click();
+	}
+}
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
-    // <label for="Bread">Bread/label><br>
-}
+	// <label for="Bread">Bread/label><br>
 
 function displayAllProducts(optionArray) {
 	var s2 = document.getElementById('displayProduct');
@@ -136,7 +156,6 @@ function selectedItems(){
 	c.appendChild(para);
 	c.appendChild(document.createTextNode("Total Price is $" + (getTotalPrice(chosenProducts)).toFixed(2)));	
 	document.getElementById("myBtn").click();
-	
 }
 
 function openCity(evt, tabName) {
