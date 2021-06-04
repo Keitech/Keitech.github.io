@@ -30,6 +30,13 @@ function sortPrice(a, b) {
 function sortCategory(a, b) {
     return a.category > b.category ? 1 : -1
 }
+
+// simple Scroll function from: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+function goTop ()
+{ 
+	document.body.scrollTop = 0; // For Safari
+  	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 	
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
