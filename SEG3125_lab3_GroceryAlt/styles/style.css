@@ -278,9 +278,9 @@ body {
   background-color: #707070;
 }
 
-#bottom {
+#topright {
 position: absolute;
-bottom: 0;
+top: 0;
 right: 0;
 padding: 30px;
 }
